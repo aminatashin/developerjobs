@@ -36,7 +36,7 @@ class listingController extends Controller
         'title' => 'required',
         'address' => 'required',
         'country' => 'required',
-        'email' =>[ 'required','email'],
+        'email' =>['required','email'],
         'source' => 'required',
         'damage' => 'required',
         'tags' => 'required',
@@ -49,7 +49,7 @@ class listingController extends Controller
     }
     $formFields['user_id'] = auth()->id();
     Listing::create($formFields);
-    return $formFields;
+    return redirect('/');
 
    }
    public function edit(Listing $listing) {
