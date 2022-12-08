@@ -19,10 +19,13 @@ return new class extends Migration
             $table->string('title');
             $table->string('logo')->nullable();
             $table->string('tags');
-            $table->string('company');
-            $table->string('location');
+            $table->string('address');
+            $table->string('damage');
+            $table->string('country');
+            $table->integer('number');
+            $table->string('fullname');
             $table->string('email');
-            $table->string('website');
+            $table->string('source');
             $table->longText('description');
             $table->timestamps();
         });

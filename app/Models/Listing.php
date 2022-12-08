@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Listing extends Model
 {
     use HasFactory;
-    protected $guarded = [];  
+    
+    // protected $guarded = [];  
     public function scopeFilter($query, array $filters){
         if($filters['tag'] ?? false){
             $query->where('tags', 'like' , '%'. request('tag') . '%');

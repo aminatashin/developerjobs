@@ -11,10 +11,11 @@
             <h3 class="text-2xl">
                 <a href="/listings/{{$listing['id']}}">{{$listing['title']}}</a>
             </h3>
-            <div class="text-xl font-bold mb-4">{{$listing["company"]}}</div>
+            <div class="text-xl font-bold mb-4">{{$listing["country"]}}</div>
+            <div class="text-xl font-bold mb-4">{{$listing["address"]}}</div>
            <x-listing-tags :label="$listing->tags" />
             <div class="text-lg mt-4">
-                <i class="fa-solid fa-location-dot">{{$listing["location"]}}</i> 
+                <i class="fa-solid fa-location-dot">{{$listing["country"]}}</i> 
                 
             </div>
         </div>

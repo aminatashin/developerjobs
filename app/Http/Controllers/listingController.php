@@ -34,11 +34,14 @@ class listingController extends Controller
 
     $formFields = $request->validate([
         'title' => 'required',
-        'company' => ['required', Rule::unique('listings', 'company')],
-        'location' => 'required',
-        'website' => 'required',
-        'email' => ['required', 'email'],
+        'address' => 'required',
+        'country' => 'required',
+        'email' =>[ 'required','email'],
+        'source' => 'required',
+        'damage' => 'required',
         'tags' => 'required',
+        'fullname' => 'required',
+        'number' => 'required',
         'description' => 'required'
     ]);
     if($request->hasFile('logo')){
@@ -46,7 +49,7 @@ class listingController extends Controller
     }
     $formFields['user_id'] = auth()->id();
     Listing::create($formFields);
-    return redirect('/');
+    return $formFields;
 
    }
    public function edit(Listing $listing) {
@@ -57,11 +60,14 @@ class listingController extends Controller
 public function update(Request $request, Listing $listing){
     $formFields = $request->validate([
         'title' => 'required',
-        'company' => 'required',
-        'location' => 'required',
-        'website' => 'required',
-        'email' => ['required', 'email'],
+        'address' => 'required',
+        'country' => 'required',
+        'email' =>[ 'required','email'],
+        'source' => 'required',
+        'damage' => 'required',
         'tags' => 'required',
+        'fullname' => 'required',
+        'number' => 'required',
         'description' => 'required'
     ]);
     if($request->hasFile('logo')){
